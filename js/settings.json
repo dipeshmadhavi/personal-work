@@ -1,0 +1,28 @@
+{
+  "terminal.integrated.shell.windows": "C:\\Windows\\Sysnative\\cmd.exe",
+  "workbench.sideBar.location": "left",
+  "workbench.activityBar.visible": true,
+  "window.zoomLevel": 0,
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.fontSize": 14,
+  "gitlens.keymap": "alternate",
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true
+  },
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.rulers": [120, 140],
+  "editor.wordWrapColumn": 140,
+  "tslint.autoFixOnSave": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.minimap.enabled": false,
+  "git.ignoreMissingGitWarning": true,
+  "explorer.confirmDelete": false,
+  "code-runner.runInTerminal": true,
+  "terminal.integrated.rendererType": "dom",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "task.slowProviderWarning": ["npm"],
+  "task.autoDetect": "off"
+}

@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title> Poll </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="content" padding no-bounce text-center fullscreen>
+  <ion-list>
+    <ion-item>
+      <ion-segment>
+        <ion-segment-button> <ion-label>Tea</ion-label> </ion-segment-button>
+        <ion-segment-button> <ion-label>Coffee</ion-label> </ion-segment-button>
+      </ion-segment>
+    </ion-item>
+    <ion-item>
+      <ion-segment>
+        <ion-segment-button>
+          <ion-label>Dairymilk</ion-label>
+        </ion-segment-button>
+        <ion-segment-button>
+          <ion-label>Kit-Kat</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-label>beverages</ion-label>
+      <ion-select placeholder="Select One">
+        <ion-select-option value="tea">Tea</ion-select-option>
+        <ion-select-option value="coffee">Coffee</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Chocolates</ion-label>
+      <ion-select placeholder="Select One">
+        <ion-select-option value="tea">Dairymilk</ion-select-option>
+        <ion-select-option value="coffee">Kit-Kat</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-slides
+    style="background: black"
+    id="slides"
+    pager="true"
+    [options]="slideOpts"
+  >
+    <ion-slide style="background: red; color: white;">
+      <h1>swipe left</h1>
+    </ion-slide>
+    <ion-slide style="background: white;">
+      <ion-radio-group>
+        <ion-item-divider> <ion-label>beverages</ion-label> </ion-item-divider>
+        <ion-item>
+          <ion-label>Tea</ion-label>
+          <ion-radio slot="end" name="tea"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Coffee</ion-label>
+          <ion-radio slot="end" color="danger" name="coffee"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-slide>
+    <ion-slide style="background:white;">
+      <ion-radio-group>
+        <ion-item-divider> <ion-label>Chocolates</ion-label> </ion-item-divider>
+        <ion-item>
+          <ion-label>Dairymilk</ion-label>
+          <ion-radio slot="end" name="dairymilk"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Kit-Kat</ion-label>
+          <ion-radio slot="end" color="danger" name="kitkat"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-slide>
+    <ion-slide style="background: red; color: white;">
+      <h1>Thank You</h1>
+    </ion-slide>
+  </ion-slides>
+  <br /><br />
+  <ion-item>
+    <ion-textarea placeholder="Add your other likes"></ion-textarea>
+  </ion-item>
+  <ion-button (click)="presentToast()"> Save </ion-button>
+</ion-content>
+<ion-footer>
+  <ion-toolbar> <ion-title>This is Footer</ion-title> </ion-toolbar>
+</ion-footer>

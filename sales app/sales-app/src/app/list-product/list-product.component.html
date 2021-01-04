@@ -1,0 +1,14 @@
+<button routerLink="add-product">Add Product</button> Page Number: {{ pageNumber }} Total: {{ total }}
+<table border="1">
+  <tr>
+    <th *ngFor="let productName of productList">{{ productName.value }}</th>
+  </tr>
+  <tr *ngFor="let product of products">
+    <td *ngFor="let productName of productList">{{ product[productName.name] }}</td>
+    <td><button (click)="updateProduct(product)">Update</button></td>
+    <td><button (click)="deleteProduct(product._id)">Delete</button></td>
+  </tr>
+</table>
+<button (click)="prev()" [disabled]="pageNumber <= 1">Prev</button>
+<button (click)="next()" [disabled]="perPage * pageNumber > total">Next</button>
+{{ streamData }}

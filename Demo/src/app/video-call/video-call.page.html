@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>video call</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item lines="none">
+    <ion-label>Access Token</ion-label>
+    <ion-input [(ngModel)]="token" position="floating" placeholder="Access token"></ion-input>
+  </ion-item>
+  <ion-button color="primary" expand="full" *ngIf="!isActive" (click)="setupMedia()">Join</ion-button>
+  <div class="videos">
+    <div id="video-container"></div>
+  </div>
+  <ion-button color="primary" expand="full" *ngIf="isActive" (click)="disconnectCall()">Disconnect</ion-button>
+</ion-content>

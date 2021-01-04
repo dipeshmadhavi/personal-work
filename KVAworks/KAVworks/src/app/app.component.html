@@ -1,0 +1,15 @@
+<h2>{{ title }}</h2>
+<table border="1">
+  <tr>
+    <td>Server Name</td>
+  </tr>
+  <tr *ngFor="let groups of servergroups">
+    <td>{{ groups.groupname }}</td>
+    <td>
+      <tr *ngFor="let Server of groups.servers">
+        <td>{{ Server.ip }}</td>
+        <td><button (click)="executeServer(groups, Server)">Execute</button></td>
+      </tr>
+    </td>
+  </tr>
+</table>

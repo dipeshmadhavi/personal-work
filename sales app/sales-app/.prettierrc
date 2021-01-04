@@ -1,0 +1,7 @@
+{
+  "singleQuote": true,
+  "arrowParens": "always",
+  "tslintIntegration": true,
+  "trailingComma": "all",
+  "printWidth": 140
+}

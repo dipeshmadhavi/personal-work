@@ -1,0 +1,100 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title> My app </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content id="content" padding fullscreen>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content
+        pullingIcon="arrow-dropdown"
+        pullingText="Pull to refresh"
+        refreshingSpinner="circles"
+        refreshingText="Refreshing..."
+      >
+      </ion-refresher-content>
+    </ion-refresher>
+    <ion-searchbar animated="true"> </ion-searchbar>
+    <ion-fab horizontal="end" edge id="fab4" slot="fixed">
+      <ion-fab-button
+        (click)="clickMainFAB('fab4')"
+        size="small"
+        class="e2eFabTopRight"
+      >
+        <ion-icon name="add" id="log"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list>
+        <ion-fab-button (click)="openSocial('facebook', 'fab4')">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button (click)="openSocial('twitter', 'fab4')">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button (click)="openSocial('vimeo', 'fab4')">
+          <ion-icon name="logo-vimeo"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button (click)="openSocial('instagram', 'fab4')">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+
+    <ion-button id="basic" expand="block" (click)="presentAlert()"
+      >Alert</ion-button
+    >
+    <ion-button
+      id="multipleButtons"
+      expand="block"
+      (click)="presentAlertMultipleButtons()"
+      >Multiple Buttons (>2)</ion-button
+    >
+    <ion-button id="confirm" expand="block" (click)="presentAlertConfirm()"
+      >Confirm</ion-button
+    >
+    <ion-button
+      id="basic"
+      expand="block"
+      (click)="
+        presentLoadingWithOptions({ duration: 2000, content: 'Please wait...' })
+      "
+      >Show Default Loading</ion-button
+    >
+
+    <ion-card>
+      <ion-item>
+        <img src="./../../assets/images/image1.jpg" />
+        <ion-label>ion-item in a card, icon left, button right</ion-label>
+      </ion-item>
+      <ion-card-content>
+        This is content, without any paragraph or header tags, within an
+        ion-card-content element.
+      </ion-card-content>
+    </ion-card>
+    <ion-item>
+      <ion-range pin="true" value="25" id="progress-value" step="2">
+        <ion-label slot="start">0</ion-label>
+        <ion-label slot="end">100</ion-label>
+      </ion-range>
+    </ion-item>
+    <ion-segment>
+      <ion-segment-button checked>
+        <ion-label>Poor</ion-label>
+        <ion-icon name="thumbs-down"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button>
+        <ion-label>Good</ion-label> <ion-icon name="heart"></ion-icon
+      ></ion-segment-button>
+      <ion-segment-button>
+        <ion-label>Very good</ion-label>
+        <ion-icon name="thumbs-up"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-content>
+  <ion-footer>
+    <ion-toolbar> <ion-title>This is Footer</ion-title> </ion-toolbar>
+  </ion-footer>
+</ion-app>

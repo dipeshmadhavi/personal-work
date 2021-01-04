@@ -1,0 +1,11 @@
+{
+  "singleQuote": true,
+  "arrowParens": "always",
+  "tslintIntegration": true,
+  "trailingComma": "all",
+  "printWidth": 140,
+  "prettier.cssEnable": [
+    "css",
+    "scss"
+  ]
+}

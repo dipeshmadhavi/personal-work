@@ -1,0 +1,45 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 2em;
+}
+
+h1 {
+  font-weight: normal;
+  color: #001489;
+}
+
+button {
+  border: none;
+  background: #001489;
+  color: #fff;
+  font-size: 24px;
+  padding: 0.5em;
+  border-radius: 6px;
+}
+
+.name {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  margin: 0;
+  padding: 0.5em 0.5em 0.5em 2em;
+  background: rgba(242, 47, 70, 0.8);
+  color: #fff;
+  font-size: 16px;
+  line-height: 1;
+}
+.name::after {
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 0;
+  right: -2em;
+  border: 1em solid rgba(242, 47, 70, 0.8);
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+
+#video-container {
+  position: relative;
+}

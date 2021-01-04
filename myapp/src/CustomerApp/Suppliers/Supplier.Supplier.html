@@ -1,0 +1,22 @@
+Welcome Supplier
+<input
+  type="file"
+  accept=".xlsx, .xls, .csv"
+  ng2FileSelect
+  [uploader]="uploader"
+/>
+<button
+  type="button"
+  class="btn btn-success btn-s"
+  (click)="uploader.uploadAll()"
+>
+  <span class="glyphicon glyphicon-upload"></span> Upload all
+</button>
+<!-- <div class="form-group">
+  <label for="file">Choose File</label>
+  <input
+    type="file"
+    id="file"
+    (change)="handleFileInput($event.target.files)"
+  />
+</div> -->

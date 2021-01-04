@@ -1,0 +1,21 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title> Houses </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content slot="start">
+    <ion-list>
+      <ion-item *ngFor="let item of names">
+        {{ item }}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+  <ion-footer>
+    <ion-toolbar> <ion-title>This is Footer.</ion-title> </ion-toolbar>
+  </ion-footer>
+</ion-app>

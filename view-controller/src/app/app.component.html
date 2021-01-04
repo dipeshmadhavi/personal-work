@@ -1,0 +1,31 @@
+<h2>{{ title }}</h2>
+
+<div class="tab">
+  <span *ngFor="let view of appService.views">
+    <button class="tablinks" *ngIf="view.type === 'one'" (click)="navigate(view)">{{ view.name }}</button>
+    <button class="tablinks" *ngIf="view.type === 'two'" (click)="navigate(view)">{{ view.name }}</button>
+    <button class="tablinks" *ngIf="view.type === 'three'" (click)="navigate(view)">{{ view.name }}</button>
+  </span>
+  <span>
+    <button class="tablinks" [mdePopoverTriggerFor]="appPopover" mdePopoverTriggerOn="click">+</button>
+    <mde-popover
+      #appPopover="mdePopover"
+      [mdePopoverOverlapTrigger]="false"
+      [mdePopoverCloseOnClick]="false"
+      mdePopoverPositionY="below"
+      mdePopoverArrowColor="#fff"
+    >
+      <div class="tab">
+        <div *ngFor="let view of appService.defaultViews">
+          <button (click)="add(view); togglePopover()">{{ view }}</button>
+        </div>
+      </div>
+    </mde-popover>
+  </span>
+</div>
+<!-- <router-outlet></router-outlet> -->
+<div>
+  <app-view-one *ngIf="selectedView.type === 'one'" [inputView]="selectedView"></app-view-one>
+  <app-view-two *ngIf="selectedView.type === 'two'" [inputView]="selectedView"></app-view-two>
+  <app-view-three *ngIf="selectedView.type === 'three'" [inputView]="selectedView"></app-view-three>
+</div>

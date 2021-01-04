@@ -1,0 +1,98 @@
+<form [formGroup]="customerObj.formGroup">
+  CustomerCode:
+  <input
+    formControlName="CustomerCodeControl"
+    type="text"
+    [(ngModel)]="customerObj.CustomerCode"
+    type="text"
+  />
+  <br />
+  <div
+    class="error"
+    *ngIf="customerObj.formGroup.controls['CustomerCodeControl'].dirty"
+    [hidden]="
+      !customerObj.formGroup.controls['CustomerCodeControl'].hasError(
+        'required'
+      )
+    "
+  >
+    Code is requried
+  </div>
+  <div
+    class="error"
+    *ngIf="customerObj.formGroup.controls['CustomerCodeControl'].dirty"
+    [hidden]="
+      !customerObj.formGroup.controls['CustomerCodeControl'].hasError('pattern')
+    "
+  >
+    patten not matching
+  </div>
+  CustomerName:
+  <input
+    formControlName="CustomerNameControl"
+    type="text"
+    [(ngModel)]="customerObj.CustomerName"
+    type="text"
+  />
+  <br />
+  <div
+    class="error"
+    *ngIf="customerObj.formGroup.controls['CustomerNameControl'].dirty"
+    [hidden]="
+      !customerObj.formGroup.controls['CustomerNameControl'].hasError(
+        'required'
+      )
+    "
+  >
+    Name is requried
+  </div>
+  CustomerAmount:
+  <input
+    [ngModelOptions]="{ standalone: true }"
+    type="text"
+    [(ngModel)]="customerObj.CustomerAmount"
+    type="text"
+  />
+  <br />
+  <input type="button" value="Clear" (click)="Clear()" /> <br />
+  <input
+    [disabled]="!customerObj.formGroup.valid"
+    type="button"
+    value="Add"
+    (click)="Add()"
+  />
+  <input
+    [disabled]="!customerObj.formGroup.valid"
+    type="button"
+    value="Update"
+    (click)="Update(customerObj)"
+  />
+  <input type="button" value="Search" (click)="find()" />
+  <!-- <input [disabled]='!(customerObj.formGroup.valid)' type="button" value="Delete" (click)="Delete()"/>  -->
+</form>
+
+{{ customerObj.CustomerCode }} <br />
+{{ customerObj.CustomerName | uppercase }} <br />
+{{ customerObj.CustomerAmount | currency }} <br />
+Customer Type :-
+<div>{{ customerObj.CustomerAmount | Grading }} <br /></div>
+
+<table class="myTable" border="1">
+  <tr>
+    <td>Customer Code</td>
+    <td>Customer Name</td>
+    <td>Customer Amount</td>
+  </tr>
+  <tr *ngFor="let cust of customerObjs">
+    <td>{{ cust.CustomerCode }}</td>
+    <td>{{ cust.CustomerName }}</td>
+    <td>{{ cust.CustomerAmount | currency }}</td>
+    <td><button (click)="Select(cust)">Select</button></td>
+    <td><button (click)="Delete(cust)">Delete</button></td>
+  </tr>
+</table>
+
+<!-- <grid-ui  [grid-columns]="[{'colName':'CustomerCode'},{'colName':'CustomerName'},{'colName':'CustomerAmount'}]" 
+        [grid-data]="customerObjs"
+        (grid-selected)="Select($event)">
+    </grid-ui> -->

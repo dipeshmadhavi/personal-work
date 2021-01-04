@@ -1,0 +1,80 @@
+<form [formGroup]="addProductForm" (ngSubmit)="onSubmit()">
+  <table>
+    <tr>
+      <td>
+        <label>Name</label>
+      </td>
+      <td>
+        <input type="text" formControlName="name" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>Price</label>
+      </td>
+      <td>
+        <input type="number" formControlName="price" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>Retail Price</label>
+      </td>
+      <td>
+        <input type="number" formControlName="retail_price" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>Description</label>
+      </td>
+      <td>
+        <input type="text" formControlName="description" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>Category</label>
+      </td>
+      <td>
+        <input type="text" formControlName="category" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>Brand</label>
+      </td>
+      <td>
+        <input type="text" formControlName="brand" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>Color</label>
+      </td>
+      <td>
+        <input type="text" formControlName="color" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>Size</label>
+      </td>
+      <td>
+        <label *ngFor="let size of sizes">
+          <input type="checkbox" (click)="addSize(size)" />
+          {{ size }}
+        </label>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button (click)="clearForm()">Cancel</button>
+      </td>
+      <td>
+        <button type="submit" [disabled]="!addProductForm.valid" *ngIf="!productService.selectedProduct">Create</button>
+        <button (click)="updateProduct()" *ngIf="productService.selectedProduct">Update</button>
+      </td>
+    </tr>
+  </table>
+</form>

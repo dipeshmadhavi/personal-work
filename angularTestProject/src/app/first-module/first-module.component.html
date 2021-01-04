@@ -1,0 +1,5 @@
+<p>first-module works!</p>
+<ul>
+  <li *ngFor="let user of users; trackBy: trackByFn">{{ user.name }}</li>
+</ul>
+<button (click)="getItems()">Refresh items</button>

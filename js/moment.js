@@ -1,0 +1,14 @@
+const moment = require("moment");
+var today = new Date();
+var yesterday = new Date();
+var startTime = new Date();
+var endTime = new Date();
+console.log(today);
+yesterday.setDate(today.getDate() - 1);
+startTime.setDate(yesterday.getDate());
+endTime.setDate(yesterday.getDate());
+startTime.setHours(00, 00);
+endTime.setHours(24, 00);
+console.log("yesterday ==> ", moment(yesterday).format("LLL"));
+console.log("start time ==> ", moment(startTime).format("LLL"));
+console.log("end time ==> ", moment(endTime).format("LLL"));

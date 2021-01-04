@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>BPMN</title>
+  </head>
+  <link rel="stylesheet" href="BPMN.css" type="text/css" />
+  <link rel="stylesheet" href="jquery-ui.min.css" />
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="figures.js"></script>
+  <script src="https://unpkg.com/gojs/release/go-debug.js"></script>
+  <body onload="init()">
+    <div id="PaletteAndDiagram">
+      <div id="sideBar">
+        <span
+          style="display: inline-block; vertical-align: top; padding: 5px; width:100%"
+        >
+          <div id="accordion">
+            <h4>Level 1 items</h4>
+            <div>
+              <div id="myPaletteLevel1" class="myPaletteDiv"></div>
+            </div>
+            <h4>Level 2 items</h4>
+            <div>
+              <div id="myPaletteLevel2" class="myPaletteDiv"></div>
+            </div>
+            <h4>Other items</h4>
+            <div>
+              <div id="myPaletteLevel3" class="myPaletteDiv"></div>
+            </div>
+          </div>
+        </span>
+      </div>
+      <div id="myDiagramDiv"></div>
+    </div>
+  </body>
+  <script src="./BPMN.js"></script>
+</html>
