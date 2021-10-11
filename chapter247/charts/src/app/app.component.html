@@ -1,0 +1,6 @@
+{{title}}
+<section *ngIf="isLoaded">
+  <highcharts-chart [Highcharts]="Highcharts" [options]="populationsOptions"></highcharts-chart>
+  <highcharts-chart [Highcharts]="Highcharts" [options]="area1Options"></highcharts-chart>
+  <highcharts-chart [Highcharts]="Highcharts" [options]="area2Options"></highcharts-chart>
+</section>
