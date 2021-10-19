@@ -3,6 +3,8 @@
     "postinstall": "",
     "start": "node ./dir"
   },
+  "config": {
+  },
   "author": "Dipesh Madhavi",
   "dependencies": {
     "@azure/storage-blob": "^12.7.0",

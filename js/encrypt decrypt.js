@@ -27,8 +27,6 @@ doDecrypt = async (encData) => {
   console.log(decryptedText);
 }
 
-doEncrypt({
-  test: 'test'
-});
+// doEncrypt({  test: 'test'});
 
-// doDecrypt("test")
+doDecrypt("test")
