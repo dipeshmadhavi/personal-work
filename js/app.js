@@ -8,7 +8,13 @@ var store = require('app-store-scraper');
 // })
 //   .catch(console.log());
 
-gplay.app({ appId: 'com.enterprise.rezility' }).then(console.log, console.log);
+// gplay.app({ appId: 'com.mahindra.mkisan' }).then(console.log, console.log);
+gplay.app({appId: 'com.mahindra.mkisan'})
+  .then((data) => {
+    console.log(data);
+  }).catch((e) => {
+    console.log(e);
+  });
 
 // store
 //   .app({ appId: 'com.enterprise.rezility' })

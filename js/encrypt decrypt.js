@@ -1,8 +1,11 @@
 const CryptoJS = require("crypto-js");
+const Moment = require('moment');
 let key = CryptoJS.enc.Utf8.parse('M@h1ndra$1234567');
 let iv = CryptoJS.enc.Utf8.parse('0001000100010001');
+// const key = CryptoJS.enc.Utf8.parse(Moment().format("DDMMYYYY"));
+// const iv = CryptoJS.enc.Utf8.parse(Moment().format("YYYYMMDD"));
 
-doEncrypt = async (plainData) => {
+doEncrypt = (plainData) => {
   var encrypted = CryptoJS.AES.encrypt(plainData, key, {
       keySize: 128 / 8,
       iv: iv,
@@ -13,7 +16,7 @@ doEncrypt = async (plainData) => {
   console.log(encrypted);
 }
 
-doDecrypt = async (encData) => {
+doDecrypt = (encData) => {
   let decryptedBytes;
   let decryptedText;
   decryptedBytes = CryptoJS.AES.decrypt(encData, key, {
@@ -24,9 +27,11 @@ doDecrypt = async (encData) => {
   });
   decryptedText = decryptedBytes.toString(CryptoJS.enc.Utf8);
   // return decryptedText
-  console.log(decryptedText);
+  const data = JSON.parse(decryptedText);
+  console.log(data);
 }
 
-// doEncrypt({  test: 'test'});
+doDecrypt("B3PkiXUsOCsgrIGga6Fp9Q==");
+// doEncrypt("AFS-KM===Rise@123");
 
-doDecrypt("test")
+

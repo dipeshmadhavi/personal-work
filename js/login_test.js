@@ -18,7 +18,7 @@ const encrypt = (username, password) => {
   }
 };
 
-console.log(encrypt('210613', 'Rugved@2'));
+console.log(encrypt('jadhpu-cont@mahindra.com', 'Say&Raj@0824'));
 // axios.post('https://mapps.mahindra.com/OAuthEPMobile/client/tokenRequest', {
 //   tokenid: token,
 // });
